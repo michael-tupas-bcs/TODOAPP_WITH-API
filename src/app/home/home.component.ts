@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { MatDialog } from "@angular/material/dialog"
 import { AddTaskComponent } from '../add-task/add-task.component';
+import { UpdateTaskComponent } from '../update-task/update-task.component';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 
@@ -144,6 +145,11 @@ export class HomeComponent implements OnInit {
 
   addTask() {
     this.dialog.open(AddTaskComponent);
+  }
+
+  editTask(data:any) {
+    sessionStorage.setItem('taskData',JSON.stringify(data));
+    this.dialog.open(UpdateTaskComponent);
   }
 
   logoutUser() {

@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { UpdateTaskComponent } from './update-task/update-task.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    UpdateTaskComponent
   ],
   entryComponents: [
     [AddTaskComponent],

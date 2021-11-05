@@ -23,9 +23,17 @@
                                         <mat-card-title>{{item.taskTitle}}</mat-card-title>
                                         <mat-card-subtitle>{{item.taskDesc}}</mat-card-subtitle>
                                     </mat-card-header>
-                                    <button mat-mini-fab color="warn">
-                                        <mat-icon #btnDelete (click)="deleteTask(item.id)">delete</mat-icon>
-                                    </button>
+                                    <mat-card-actions>
+                                        <button mat-mini-fab color="accent">
+                                            <mat-icon #btnEdit (click)="editTask(item)">edit</mat-icon>
+                                        </button>
+                                        <span style="padding: 5px;"></span>
+                                        <button mat-mini-fab color="warn">
+                                            <mat-icon #btnDelete (click)="deleteTask(item.id)">delete</mat-icon>
+                                        </button>
+                                        <span style="padding: 5px;"></span>
+                                    </mat-card-actions>
+                                    
                                 </mat-card>
                             </div>
                         </div>
@@ -41,9 +49,16 @@
                                         <mat-card-title>{{item.taskTitle}}</mat-card-title>
                                         <mat-card-subtitle>{{item.taskDesc}}</mat-card-subtitle>
                                     </mat-card-header>
-                                    <button mat-mini-fab color="warn">
-                                        <mat-icon #btnDelete (click)="deleteTask(item.id)">delete</mat-icon>
-                                    </button>
+                                    <mat-card-actions>
+                                        <button mat-mini-fab color="accent">
+                                            <mat-icon #btnEdit (click)="editTask(item)">edit</mat-icon>
+                                        </button>
+                                        <span style="padding: 5px;"></span>
+                                        <button mat-mini-fab color="warn">
+                                            <mat-icon #btnDelete (click)="deleteTask(item.id)">delete</mat-icon>
+                                        </button>
+                                        <span style="padding: 5px;"></span>
+                                    </mat-card-actions>
                                 </mat-card>
                             </div>
                         </div>
