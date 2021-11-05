@@ -1,0 +1,55 @@
+<div fxLayoutAlign="center" fxFlexFill class="main-div">
+    <mat-card fxFlex="800">
+        <mat-toolbar>
+            <mat-icon aria-hidden="false">home</mat-icon>
+            <span>Todo List Application</span>
+            <span class="example-spacer"></span>
+            <span>{{username}}</span>
+            <span style="padding: 5px;"></span>
+            <button mat-raised-button color="accent" type="button" (click)="addTask()">Add Task</button>
+            <span style="padding: 5px;"></span>
+            <button mat-raised-button color="warn" type="button" (click)="logoutUser()">Logout</button>
+        </mat-toolbar>
+        <div class="board">
+            <div class="board-wrapper">
+                <div class="board-columns">
+                    <div class="board-column">
+                        <div class="example-container">
+                            <h2 class="column-title">To do</h2>
+                            <div class="example-list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="todos"
+                                [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="drop($event)">
+                                <mat-card class="example-box" *ngFor="let item of todos" cdkDrag>
+                                    <mat-card-header>
+                                        <mat-card-title>{{item.taskTitle}}</mat-card-title>
+                                        <mat-card-subtitle>{{item.taskDesc}}</mat-card-subtitle>
+                                    </mat-card-header>
+                                    <button mat-mini-fab color="warn">
+                                        <mat-icon #btnDelete (click)="deleteTask(item.id)">delete</mat-icon>
+                                    </button>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="board-column">
+                        <div class="example-container">
+                            <h2 class="column-title">Done</h2>
+                            <div class="example-list" cdkDropList #doneList="cdkDropList" [cdkDropListData]="completed"
+                                [cdkDropListConnectedTo]="[todoList]" (cdkDropListDropped)="drop($event)">
+                                <mat-card class="example-box" *ngFor="let item of completed" cdkDrag>
+                                    <mat-card-header>
+                                        <mat-card-title>{{item.taskTitle}}</mat-card-title>
+                                        <mat-card-subtitle>{{item.taskDesc}}</mat-card-subtitle>
+                                    </mat-card-header>
+                                    <button mat-mini-fab color="warn">
+                                        <mat-icon #btnDelete (click)="deleteTask(item.id)">delete</mat-icon>
+                                    </button>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
